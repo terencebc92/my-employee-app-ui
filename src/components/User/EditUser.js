@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./User.css";
 import Button from 'react-bootstrap/Button';
@@ -9,7 +9,6 @@ import { employeesUrl } from '../../config/config';
 
 const EditUser = () => {
   const [employee, setEmployee] = useState([]);
-  const { id } = useParams();
   const [showToast, setShowToast] = useState(false);
 
 
