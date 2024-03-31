@@ -1,6 +1,6 @@
 import './App.css';
 import CreateUser from "./components/User/CreateUser";
-import { Route, Router, Routes, } from "react-router-dom";
+import { Route, Routes, } from "react-router-dom";
 import EditUser from "./components/User/EditUser";
 import CommonNavBar from './components/Common/CommonNavBar';
 import MainTable from './components/User/MainTable';

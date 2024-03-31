@@ -8,8 +8,6 @@ import { employeesUrl } from '../../config/config';
 function MainTable() {
 
     const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
     const [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
@@ -29,7 +27,6 @@ function MainTable() {
 
     const handleDelete = async (id) => {
         console.log("id : -", id);
-        setIsLoading(true);
         try {
           const response = await fetch(employeesUrl.concat("/") + id, {
             method: "DELETE",
@@ -40,9 +37,9 @@ function MainTable() {
           setShowToast(true)
           setUsers(users.filter((item) => item.id !== id));
         } catch (error) {
-          setError(error.message);
+          console.log(error.message);
         } finally {
-          setIsLoading(false);
+          console.log("Finished")
         }
       };
 

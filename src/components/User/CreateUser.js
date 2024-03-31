@@ -6,10 +6,7 @@ import { Toast, ToastContainer } from "react-bootstrap";
 import { employeesUrl } from '../../config/config';
 
 const CreateUser = () => {
-    const [error, setError] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
     const [showToast, setShowToast] = useState(false);
-
     const [employee, setEmployee] = useState([])
 
     const handleChange = (e) => {
@@ -25,7 +22,6 @@ const CreateUser = () => {
         event.preventDefault();
         console.log(employee)
         try {
-            setIsLoading(true);
             const response = await fetch(employeesUrl, {
                 method: 'POST',
                 headers: {
@@ -42,9 +38,9 @@ const CreateUser = () => {
             }
 
         } catch (error) {
-            setError(error.message);
+            console.log(error.message);
         } finally{
-            setIsLoading(false);
+            console.log("Done");
         }
     }
 

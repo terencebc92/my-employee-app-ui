@@ -12,21 +12,6 @@ const EditUser = () => {
   const { id } = useParams();
   const [showToast, setShowToast] = useState(false);
 
-  useEffect(() => {
-    getEmployee();
-  }, []);
-
-  const getEmployee = () => {
-    axios
-      .get(employeesUrl.concat("/") + id)
-      .then((item) => {
-        console.log(item.data)
-        setEmployee(item.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
