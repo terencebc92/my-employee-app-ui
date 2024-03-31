@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./User.css";
 import Button from 'react-bootstrap/Button';
@@ -9,8 +9,24 @@ import { employeesUrl } from '../../config/config';
 
 const EditUser = () => {
   const [employee, setEmployee] = useState([]);
+  const { id } = useParams();
   const [showToast, setShowToast] = useState(false);
 
+  useEffect(() => {
+    getEmployee();
+  }, []);
+
+  const getEmployee = () => {
+    axios
+      .get(employeesUrl.concat("/") + id)
+      .then((item) => {
+        console.log(item.data)
+        setEmployee(item.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
