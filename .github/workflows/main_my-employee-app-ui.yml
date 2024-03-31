@@ -1,8 +1,5 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-
 # More GitHub Actions for Azure: https://github.com/Azure/actions
-
-
 
 name: Build and deploy Node.js app to Azure Web App - my-employee-app-ui
 
@@ -22,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20.9.0'
+          node-version: '20.x'
 
       - name: npm install, build, and test
         run: |
@@ -43,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -60,14 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.__clientidsecretname__ }}
-          tenant-id: ${{ secrets.__tenantidsecretname__ }}
-          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E29B84C4066246808EF59ECC117AD893 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_31442F5CA3B14468AD7671E4DF768DC1 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D916DFFFE64C4EBD896603948692605F }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'my-employee-app-ui'
-          slot-name: 'production'
+          slot-name: 'Production'
           package: .
+          
