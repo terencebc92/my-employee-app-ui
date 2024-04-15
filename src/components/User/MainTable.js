@@ -62,7 +62,7 @@ function MainTable() {
           </div>
         </>
       ) : (
-        <div>
+        <div className="container pt-4">
           <ToastContainer position="middle-center">
             <Toast
               bg="primary"
