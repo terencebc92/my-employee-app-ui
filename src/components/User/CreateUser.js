@@ -43,7 +43,7 @@ const CreateUser = () => {
   };
 
   return (
-    <div>
+    <div className="container pt-4">
       <ToastContainer position="middle-center">
         <Toast
           bg="primary"
@@ -60,7 +60,7 @@ const CreateUser = () => {
           </Toast.Body>
         </Toast>
       </ToastContainer>
-      <Form onSubmit={handleSubmit} className="container">
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>First Name</Form.Label>
           <Form.Control

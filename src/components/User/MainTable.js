@@ -48,10 +48,10 @@ function MainTable() {
   };
 
   return (
-    <div>
+    <div className="container pt-4">
       {loading ? (
         <>
-          <div class="alert alert-info">
+          <div className="alert alert-info">
             <h5>
               As I'm on Azure's free tier, please wait for the backend to start
               up
@@ -62,7 +62,7 @@ function MainTable() {
           </div>
         </>
       ) : (
-        <div className="container pt-4">
+        <div>
           <ToastContainer position="middle-center">
             <Toast
               bg="primary"
