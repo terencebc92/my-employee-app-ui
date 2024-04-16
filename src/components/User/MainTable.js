@@ -2,13 +2,14 @@ import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Toast, ToastContainer } from "react-bootstrap";
+import { Toast, ToastContainer, Button } from "react-bootstrap";
 import { employeesUrl } from "../../config/config";
 
-function MainTable() {
+const MainTable = () => {
   const [users, setUsers] = useState([]);
   const [showToast, setShowToast] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [employeeId, setEmployeeId] = useState(true);
 
   useEffect(() => {
     getUsers();
@@ -29,23 +30,37 @@ function MainTable() {
       });
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     console.log("id : -", id);
-    try {
-      const response = await fetch(employeesUrl.concat("/") + id, {
-        method: "DELETE",
+    axios
+      .delete(`${employeesUrl}/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        setShowToast(true);
+        setEmployeeId(id);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      if (!response.ok) {
-        throw new Error("Failed to delete item");
-      }
-      setShowToast(true);
-      setUsers(users.filter((item) => item.id !== id));
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      console.log("Finished");
-    }
   };
+
+  // const handleDelete = async (id) => {
+  //   console.log("id : -", id);
+  //   try {
+  //     const response = await fetch(employeesUrl.concat("/") + id, {
+  //       method: "DELETE",
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error("Failed to delete item");
+  //     }
+  //     setShowToast(true);
+  //     setUsers(users.filter((item) => item.id !== id));
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   } finally {
+  //     console.log("Finished");
+  //   }
+  // };
 
   return (
     <div className="container pt-4">
@@ -72,10 +87,10 @@ function MainTable() {
               autohide
             >
               <Toast.Header>
-                <strong className="me-auto">Success</strong>
+                <strong className="me-auto">Delete success</strong>
               </Toast.Header>
               <Toast.Body className={"text-white"}>
-                Employee deleted successfully!
+                Employee of id: {employeeId} has been deleted!
               </Toast.Body>
             </Toast>
           </ToastContainer>
@@ -102,19 +117,19 @@ function MainTable() {
                     <td>{employee.salary}</td>
                     <td>
                       <Link to={`/edit-user/${employee.id}`}>
-                        <i className="fa fa-pencil" aria-hidden="true">
+                        <Button variant="secondary" size="sm">
                           Edit
-                        </i>
+                        </Button>{" "}
                       </Link>
                     </td>
                     <td>
-                      <i
-                        className="fa fa-trash-o"
-                        aria-hidden="true"
+                      <Button
+                        variant="danger"
+                        size="sm"
                         onClick={() => handleDelete(employee.id)}
                       >
                         Delete
-                      </i>
+                      </Button>{" "}
                     </td>
                   </tr>
                 );
@@ -125,6 +140,6 @@ function MainTable() {
       )}
     </div>
   );
-}
+};
 
 export default MainTable;
