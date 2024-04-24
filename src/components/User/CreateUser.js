@@ -10,6 +10,7 @@ const CreateUser = () => {
   const [showToast, setShowToast] = useState(false);
   const [employee, setEmployee] = useState([]);
   const [responseData, setResponseData] = useState();
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +31,7 @@ const CreateUser = () => {
       })
       .catch((error) => {
         console.error(error);
+        setError(error.response.data);
       });
   };
 
@@ -53,6 +55,21 @@ const CreateUser = () => {
               <Toast.Body className={"text-white"}>
                 Employee created with id: {responseData}
               </Toast.Body>
+            </Toast>
+          </ToastContainer>
+
+          <ToastContainer position="middle-center">
+            <Toast
+              bg="danger"
+              show={error}
+              onClose={() => setError(null)}
+              delay={3000}
+              autohide
+            >
+              <Toast.Header>
+                <strong className="me-auto">Error on submission!</strong>
+              </Toast.Header>
+              <Toast.Body className={"text-white"}>{error}</Toast.Body>
             </Toast>
           </ToastContainer>
 

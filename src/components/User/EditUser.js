@@ -11,6 +11,7 @@ const EditUser = () => {
   const [employee, setEmployee] = useState([]);
   const { id } = useParams();
   const [showToast, setShowToast] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     getEmployee();
@@ -46,6 +47,7 @@ const EditUser = () => {
       })
       .catch((error) => {
         console.error(error);
+        setError(error.response.data);
       });
   };
 
@@ -69,6 +71,21 @@ const EditUser = () => {
               <Toast.Body className={"text-white"}>
                 Changes recorded for employee id: {id}
               </Toast.Body>
+            </Toast>
+          </ToastContainer>
+
+          <ToastContainer position="middle-center">
+            <Toast
+              bg="danger"
+              show={error}
+              onClose={() => setError(null)}
+              delay={3000}
+              autohide
+            >
+              <Toast.Header>
+                <strong className="me-auto">Error on submission!</strong>
+              </Toast.Header>
+              <Toast.Body className={"text-white"}>{error}</Toast.Body>
             </Toast>
           </ToastContainer>
 
