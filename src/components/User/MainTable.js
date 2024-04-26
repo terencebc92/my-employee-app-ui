@@ -346,7 +346,7 @@ const MainTable = () => {
               show={error}
               onClose={() => setError(null)}
               delay={15000}
-              autohide={false}
+              autohide="false"
             >
               <Toast.Header>
                 <strong className="me-auto">Backend failed to load</strong>
