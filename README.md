@@ -1,27 +1,25 @@
 ## Employee Management Tool built as part of Illinois Institute of Technology - ITMD 504
+
 Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
 
+![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/Create_page_success.jpg?raw=true)
 
 ### Libraries/frameworks
+
 - React
 - Bootstrap
 - Antd
 - Axios
 
-###  Features:
+### Features:
+
 - Showcases all employees and their details (first name, last name, email, salary) in tabular format
-	- Sort in ascending or descending order by salary or id
+  ![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/Main_page.png?raw=true)
+  - Sort in ascending or descending order by salary or id
 - Allows HR representative to create employee records
-	- Validations applied on the data with success/error toast message
+  - Validations applied on the data with success/error toast message
 - Allows HR representative to update and delete records via the table's actions column
-	- When deleting or updating records, HR representative is given a confirmation prompt
-
-
-
-
-
-
-
+  - When deleting or updating records, HR representative is given a confirmation prompt
 
 # Getting Started with Create React App
 

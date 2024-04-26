@@ -26,6 +26,7 @@ const MainTable = () => {
   const [employeeId, setEmployeeId] = useState(true);
   const [editingKey, setEditingKey] = useState("");
   const [error, setError] = useState(null);
+  const [backendError, setBackendError] = useState(null);
   const isEditing = (employee) => employee.id === editingKey;
 
   const edit = (employee) => {
@@ -248,7 +249,7 @@ const MainTable = () => {
         console.log(err);
         if (err.code === "ERR_NETWORK") {
           // Handle 503 error
-          setError(
+          setBackendError(
             "Looks like the backend failed to boot due to the DB instance exceeding free-tier limits."
           );
           console.error("Service unavailable");
@@ -343,15 +344,15 @@ const MainTable = () => {
           <ToastContainer position="middle-center">
             <Toast
               bg="info"
-              show={error}
-              onClose={() => setError(null)}
+              show={backendError}
+              onClose={() => setBackendError(null)}
               delay={15000}
               autohide="false"
             >
               <Toast.Header>
                 <strong className="me-auto">Backend failed to load</strong>
               </Toast.Header>
-              <Toast.Body className={"text-white"}>{error}</Toast.Body>
+              <Toast.Body className={"text-white"}>{backendError}</Toast.Body>
             </Toast>
           </ToastContainer>
 
