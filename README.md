@@ -2,7 +2,7 @@
 
 Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
 
-![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Create_page_success.png?raw=true)
+![Main page](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page.png?raw=true)
 
 ### Libraries/frameworks
 
@@ -14,12 +14,17 @@ Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
 ### Features:
 
 - Showcases all employees and their details (first name, last name, email, salary) in tabular format
-  ![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page.png?raw=true)
   - Sort in ascending or descending order by salary or id
 - Allows HR representative to create employee records
   - Validations applied on the data with success/error toast message
+    ![Creating a new emplyee](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Create_page.png?raw=true)
+    ![Success message on creation](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Create_page_success.png?raw=true)
 - Allows HR representative to update and delete records via the table's actions column
   - When deleting or updating records, HR representative is given a confirmation prompt
+    ![Deleting an employee](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page_delete.png?raw=true)
+    ![Success message on deletion](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page_delete_success.png?raw=true)
+    ![Validation message on bad edit](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page_edit_validation_error.png?raw=true)
+    ![Success message on edit](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page_edit_success.png?raw=true)
 
 # Getting Started with Create React App
 
