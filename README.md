@@ -2,7 +2,7 @@
 
 Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
 
-![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/Create_page_success.jpg?raw=true)
+![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Create_page_success.png?raw=true)
 
 ### Libraries/frameworks
 
@@ -14,7 +14,7 @@ Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
 ### Features:
 
 - Showcases all employees and their details (first name, last name, email, salary) in tabular format
-  ![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/Main_page.png?raw=true)
+  ![alt text](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page.png?raw=true)
   - Sort in ascending or descending order by salary or id
 - Allows HR representative to create employee records
   - Validations applied on the data with success/error toast message
