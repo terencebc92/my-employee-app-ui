@@ -358,6 +358,7 @@ const MainTable = () => {
 
           <Form form={form} component={false}>
             <Table
+              aria-label="Employees table"
               pagination={{
                 onChange: cancel,
               }}

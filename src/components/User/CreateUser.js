@@ -82,6 +82,7 @@ const CreateUser = () => {
                 name="firstName"
                 value={employee.firstName}
                 onChange={handleChange}
+                aria-label="Form field to enter first name"
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -92,6 +93,7 @@ const CreateUser = () => {
                 name="lastName"
                 value={employee.lastName}
                 onChange={handleChange}
+                aria-label="Form field to enter last name"
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -102,6 +104,7 @@ const CreateUser = () => {
                 name="email"
                 value={employee.email}
                 onChange={handleChange}
+                aria-label="Form field to enter email"
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -112,9 +115,15 @@ const CreateUser = () => {
                 name="salary"
                 value={employee.salary}
                 onChange={handleChange}
+                aria-label="Form field to enter salary"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              aria-label="Button to create user"
+              role="button"
+            >
               Submit
             </Button>
           </Form>
