@@ -1,6 +1,7 @@
 ## Employee Management Tool built as part of Illinois Institute of Technology - ITMD 504
 
 Url: https://thankful-island-06a5f1b00.5.azurestaticapps.net/
+Wireframe: https://app.visily.ai/projects/0f559562-8a34-4a1a-8b0e-62b4ecdff7aa/boards/920786
 
 ![Main page](https://github.com/terencebc92/my-employee-app-ui/blob/main/screenshots/Main_page.png?raw=true)
 
