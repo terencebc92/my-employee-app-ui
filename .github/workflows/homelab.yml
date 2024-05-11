@@ -29,6 +29,7 @@ jobs:
         key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
         source: "build/"
         target: "/var/www/html/"
+        strip_components: 1
         
     - name: SSH into server and restart Apache
       uses: appleboy/ssh-action@v1.0.3
