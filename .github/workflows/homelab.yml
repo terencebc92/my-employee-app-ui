@@ -21,6 +21,8 @@ jobs:
         mkdir -p deploy
         cp -r build/* deploy/
         tar -czf deploy.tar.gz deploy
+      env:
+        CI: false
     - name: Deploy to VM
       # You may pin to the exact commit or the version.
       # uses: appleboy/ssh-action@029f5b4aeeeb58fdfe1410a5d17f967dacf36262
