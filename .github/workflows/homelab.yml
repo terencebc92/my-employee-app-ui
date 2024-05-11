@@ -38,5 +38,5 @@ jobs:
         port: ${{ secrets.VM_PORT }}
         key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
         script: |
-          tar -xzf deploy.tar.gz -C /var/www/html
+          sudo systemctl restart apache2
               
