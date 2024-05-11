@@ -38,5 +38,5 @@ jobs:
         port: ${{ secrets.VM_PORT }}
         key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
         script: |
-          sshpass -p ${{ secrets.SUDO_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USERNAME }}@${{ secrets.VM_HOST }} 'echo ${{ secrets.SUDO_PASSWORD }} | sudo -S systemctl restart apache2'
+          echo ${{ secrets.SUDO_PASSWORD }} | sudo -S systemctl restart apache2
               
