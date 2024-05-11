@@ -31,7 +31,7 @@ jobs:
         host: ${{ secrets.VM_HOST }}
         username: ${{ secrets.VM_USERNAME }}
         port: ${{ secrets.VM_PORT }}
-        key: ${{ secrets.VM_PUBLIC_KEY }}
+        key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
         script: |
           mkdir -p /var/www/html
           tar -xzf deploy.tar.gz -C /var/www/html
