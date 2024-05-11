@@ -16,16 +16,21 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build and archive
-      run: |
-        npm run build
-        mkdir -p deploy
-        cp -r build/* deploy/
-        tar -czf deploy.tar.gz deploy
+      run: npm run build
       env:
         CI: false
-    - name: Deploy to VM
-      # You may pin to the exact commit or the version.
-      # uses: appleboy/ssh-action@029f5b4aeeeb58fdfe1410a5d17f967dacf36262
+
+    - name: Copy files to remote server
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: ${{ secrets.VM_HOST }}
+        username: ${{ secrets.VM_USERNAME }}
+        port: ${{ secrets.VM_PORT }}
+        key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
+        source: "build/"
+        target: "/var/www/html/"
+        
+    - name: SSH into server and restart Apache
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.VM_HOST }}
