@@ -33,6 +33,6 @@ jobs:
         port: ${{ secrets.VM_PORT }}
         key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
         script: |
-          mkdir -p /var/www/html
+          sudo mkdir -p /var/www/html
           tar -xzf deploy.tar.gz -C /var/www/html
               
