@@ -10,7 +10,7 @@ function CommonNavBar() {
       <Container>
         <Navbar.Brand as={Link} to="/">
           <Logo className="navbar-logo" />
-          Employee Management
+          Employee Management (beta)
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
