@@ -20,24 +20,24 @@ jobs:
       env:
         CI: false
 
-    - name: Copy files to remote server
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.VM_HOST }}
-        username: ${{ secrets.VM_USERNAME }}
-        port: ${{ secrets.VM_PORT }}
-        key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
-        source: "build/"
-        target: "/var/www/html/"
-        strip_components: 1
+    # - name: Copy files to remote server
+    #   uses: appleboy/scp-action@v0.1.7
+    #   with:
+    #     host: ${{ secrets.VM_HOST }}
+    #     username: ${{ secrets.VM_USERNAME }}
+    #     port: ${{ secrets.VM_PORT }}
+    #     key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
+    #     source: "build/"
+    #     target: "/var/www/html/"
+    #     strip_components: 1
         
-    - name: SSH into server and restart Apache
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.VM_HOST }}
-        username: ${{ secrets.VM_USERNAME }}
-        port: ${{ secrets.VM_PORT }}
-        key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
-        script: |
-          echo ${{ secrets.SUDO_PASSWORD }} | sudo -S systemctl restart apache2
+    # - name: SSH into server and restart Apache
+    #   uses: appleboy/ssh-action@v1.0.3
+    #   with:
+    #     host: ${{ secrets.VM_HOST }}
+    #     username: ${{ secrets.VM_USERNAME }}
+    #     port: ${{ secrets.VM_PORT }}
+    #     key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
+    #     script: |
+    #       echo ${{ secrets.SUDO_PASSWORD }} | sudo -S systemctl restart apache2
               
