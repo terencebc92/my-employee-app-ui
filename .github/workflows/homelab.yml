@@ -20,16 +20,16 @@ jobs:
       env:
         CI: false
 
-    # - name: Copy files to remote server
-    #   uses: appleboy/scp-action@v0.1.7
-    #   with:
-    #     host: ${{ secrets.VM_HOST }}
-    #     username: ${{ secrets.VM_USERNAME }}
-    #     port: ${{ secrets.VM_PORT }}
-    #     key: ${{ secrets.VM_PRIVATE_KEY_ARCHBOX }}
-    #     source: "build/"
-    #     target: "/var/www/html/"
-    #     strip_components: 1
+    - name: Copy files to remote server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.VM_UBUNTU_SERVER_HOST }}
+        username: ${{ secrets.VM_UBUNTU_SERVER_USERNAME }}
+        port: ${{ secrets.VM_UBUNTU_SERVER_PORT }}
+        key: ${{ secrets.VM_UBUNTU_SERVER_PUBLIC_KEY }}
+        source: "build/"
+        target: "/var/www/my-employee-app-ui/"
+        # strip_components: 1
         
     # - name: SSH into server and restart Apache
     #   uses: appleboy/ssh-action@v1.0.3
