@@ -15,6 +15,7 @@ import {
   Table,
   Typography,
 } from "antd";
+import "./MainTable.css";
 
 const MainTable = () => {
   const [form] = Form.useForm();
@@ -128,7 +129,7 @@ const MainTable = () => {
             </Popconfirm>
           </span>
         ) : (
-          <>
+          <div className="action-buttons">
             <Typography.Link
               disabled={editingKey !== ""}
               onClick={() => edit(employee)}
@@ -158,7 +159,7 @@ const MainTable = () => {
                 </BootStrapButton>
               </Typography.Link>
             </Popconfirm>
-          </>
+          </div>
         );
       },
     },

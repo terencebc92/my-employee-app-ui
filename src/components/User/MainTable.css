@@ -1,0 +1,15 @@
+
+/* Container for action buttons */
+.action-buttons {
+    display: flex;
+    gap: 2px;  /* Adds space between the buttons */
+    justify-content: flex-start; /* Align buttons to the left or you can use center */
+  }
+  
+  /* Style for the individual buttons */
+  .action-buttons button {
+    min-width: 60px; /* Set a minimum width for buttons */
+    font-size: 14px; /* Adjust the font size if necessary */
+    border-radius: 4px; /* Rounded corners for the buttons */
+    border: none; /* Remove any default borders */
+  }
