@@ -25,6 +25,12 @@ function CommonNavBar() {
             >
               Create
             </Nav.Link>
+            <Nav.Link as={Link} to="/game" aria-label="Link to tic tac toe">
+              Game
+            </Nav.Link>
+            <Nav.Link as={Link} to="/product" aria-label="Link to product">
+              Product
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

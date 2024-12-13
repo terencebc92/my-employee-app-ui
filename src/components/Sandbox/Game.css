@@ -1,0 +1,93 @@
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px; /* Adjust the size to make squares larger */
+  height: 100px;
+}
+
+.board {
+  border: 10px solid #000000;
+  border-radius: 10px; /* Adjust the value for more or less rounding */
+}
+
+.winning-square {
+  background: #0fff50;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: black;
+}
+
+.game-container {
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0; /* Remove any default margin */
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+
+.game-info {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: black;
+
+  display: flex;
+  flex-direction: column; /* Ensure children stack vertically */
+  justify-content: flex-start; /* Align content to the top */
+  height: 50vh; /* Set a fixed height for the move panel */
+  overflow-y: auto; /* Add a scrollbar if the content overflows */
+  padding: 10px; /* Add padding for spacing */
+  min-width: 25vw;
+  background-color: #ce633113;
+}
+
+.history-button {
+  margin-top: 0.8em;
+  background-color: #319cce;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px; /* Adjust the value for more or less rounding */
+  border: 0px;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 0.9em;
+  width: 7vw;
+  transition:
+    background-color 0.1s ease,
+    color 0.1s ease; /* Smooth transition for background and text color */
+}
+
+.history-button:hover {
+  background-color: #5aafd8;
+  color: black;
+}
+
+.history-span {
+  margin-left: 1em;
+}
