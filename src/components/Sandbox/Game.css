@@ -91,3 +91,47 @@
 .history-span {
   margin-left: 1em;
 }
+
+@media (max-width: 768px) {
+  .game-container {
+    padding-top: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0; /* Remove any default margin */
+  }
+
+  .game-info {
+    margin-left: 0;
+    padding: 5% 15%;
+    margin-top: 30px;
+  }
+
+  .history-button {
+    padding: 8px 15px; /* Reduce padding */
+    font-size: 14px; /* Smaller font size */
+    width: auto; /* Ensure the button doesn’t stretch */
+  }
+
+  .history-span {
+    margin-left: 0;
+  }
+
+  .moves-container {
+    padding: 0;
+  }
+
+  .history-item {
+    display: flex;
+    flex-direction: column; /* Stack button and span vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 8px; /* Add spacing between button and span */
+  }
+
+  /* Align game and moves panel vertically */
+  .game {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center them horizontally */
+  }
+}

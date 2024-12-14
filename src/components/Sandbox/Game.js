@@ -40,7 +40,7 @@ export default function Game() {
     }
     // style={{ display: move > 0 ? "none" : "inline" }}
     return (
-      <li key={move}>
+      <li key={move} className="history-item">
         <button className="history-button" onClick={() => jumpTo(move)}>
           {description}
         </button>
@@ -60,7 +60,7 @@ export default function Game() {
           />
         </div>
         <div className="game-info">
-          <ol>{moves}</ol>
+          <ol className="moves-container">{moves}</ol>
         </div>
       </div>
     </div>
