@@ -14,7 +14,7 @@ const cardData = [
   {
     src: matthewsGesture,
     title: "Matthew's gestures",
-    body: "Matthew's left hand is posed similarly to Christ's, but is directed back at himself. The message he is conveying to Jesus is, \"Really? You're choosing me?\" In contrast to this is the positioning of his right hand, which he reaches toward the money on the table. The two gestures appear to conflict with one another, and they reveal the struggle in MAtthew's heart between his worldy attachments and the call of Jesus.",
+    body: "Matthew's left hand is posed similarly to Christ's, but is directed back at himself. The message he is conveying to Jesus is, \"Really? You're choosing me?\" In contrast to this is the positioning of his right hand, which he reaches toward the money on the table. The two gestures appear to conflict with one another, and they reveal the struggle in Matthew's heart between his worldy attachments and the call of Jesus.",
   },
   {
     src: rayOfLight,
