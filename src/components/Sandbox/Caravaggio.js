@@ -5,6 +5,12 @@ import pointingFinger from "../../assets/images/PointingFinger.png";
 import matthewsGesture from "../../assets/images/MatthewsGesture.png";
 import rayOfLight from "../../assets/images/RayOfLight.png";
 
+const breakpoints = {
+  mobile: "768px",
+  tablet: "1024px",
+  desktop: "1200px",
+};
+
 const cardData = [
   {
     src: pointingFinger,
@@ -29,6 +35,11 @@ const Page = styled.div`
   margin: 3em 15vw;
   border-radius: 1em;
   border: 1px solid #99641515;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 10px;
+    margin: 0.5em;
+  }
 `;
 
 const TitleDiv = styled.div`
@@ -73,6 +84,10 @@ const CardsDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3em;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: block;
+  }
 `;
 const CardDiv = styled.div`
   margin: 3em 0;
@@ -80,6 +95,9 @@ const CardDiv = styled.div`
 `;
 const CardImageDiv = styled.div`
   margin-bottom: 2em;
+  @media (max-width: ${breakpoints.mobile}) {
+    text-align: center;
+  }
 `;
 const CardTextDiv = styled.div`
   font-family: "Noto Sans", sans-serif;
@@ -94,7 +112,8 @@ const CardTextDiv = styled.div`
 
 const CardHeader = styled.p(
   ({ isBold }) => `
-  font-weight: ${isBold ? "700" : "300"}`
+  font-weight: ${isBold ? "700" : "300"}
+  `
 );
 
 const CardBody = styled.p``;
