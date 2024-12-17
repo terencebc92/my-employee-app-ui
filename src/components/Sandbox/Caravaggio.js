@@ -28,6 +28,7 @@ const Page = styled.div`
   padding: 1em 6em;
   margin: 3em 15vw;
   border-radius: 1em;
+  border: 1px solid #99641515;
 `;
 
 const TitleDiv = styled.div`
@@ -87,9 +88,14 @@ const CardTextDiv = styled.div`
   font-style: normal;
 `;
 
-const CardHeader = styled.p`
-  font-weight: 700;
-`;
+// const CardHeader = styled.p`
+//   font-weight: ${(props) => (props.isBold ? "700" : "300")};
+// `;
+
+const CardHeader = styled.p(
+  ({ isBold }) => `
+  font-weight: ${isBold ? "700" : "300"}`
+);
 
 const CardBody = styled.p``;
 
@@ -137,7 +143,7 @@ function Card({ cardData }) {
         ></img>
       </CardImageDiv>
       <CardTextDiv>
-        <CardHeader>{cardData.title}</CardHeader>
+        <CardHeader isBold>{cardData.title}</CardHeader>
         <CardBody>{cardData.body}</CardBody>
       </CardTextDiv>
     </CardDiv>
