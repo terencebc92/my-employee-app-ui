@@ -31,6 +31,13 @@ function CommonNavBar() {
             <Nav.Link as={Link} to="/product" aria-label="Link to product">
               Product
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/caravaggio"
+              aria-label="Link to caravaggio"
+            >
+              Caravaggio
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

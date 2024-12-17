@@ -5,6 +5,7 @@ import CommonNavBar from "./components/Common/CommonNavBar";
 import MainTable from "./components/User/MainTable";
 import Game from "./components/Sandbox/Game";
 import Product from "./components/Sandbox/Product";
+import Caravaggio from "./components/Sandbox/Caravaggio";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/create-user" element={<CreateUser />} />
         <Route path="/game" element={<Game />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/caravaggio" element={<Caravaggio />} />
       </Routes>
     </div>
   );
