@@ -67,7 +67,7 @@ const StyledLink = styled(Nav.Link).attrs({ className: "nav-link" })`
 
 function CommonNavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <Logo className="navbar-logo" />
