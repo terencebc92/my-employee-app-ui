@@ -1,4 +1,4 @@
-name: Home CICD
+name: Home CICD (Docker)
 
 on:
   push:
