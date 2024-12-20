@@ -52,11 +52,7 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/my-employee-app-ui:latest
             docker stop my-employee-app-ui || true
             docker rm my-employee-app-ui || true
+            docker image prune -f
+            docker container prune -f
+            docker network prune -f
             docker run -d --name my-employee-app-ui -p 3000:80 ${{ secrets.DOCKER_USERNAME }}/my-employee-app-ui:latest
-
-      # Step 7: Clean up unused Docker resources
-      - name: Clean up unused Docker resources
-        run: |
-          docker container prune -f
-          docker image prune -f
-          docker network prune -f
