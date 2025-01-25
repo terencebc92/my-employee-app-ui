@@ -107,7 +107,7 @@ function CommonNavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <StyledLink as={Link} to="/" aria-label="Link to profile">
-              Profile
+              Home
             </StyledLink>
 
             <StyledLink

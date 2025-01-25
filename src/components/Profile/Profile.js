@@ -8,6 +8,7 @@ import { emailUrl } from "../../config/config";
 import { FaDocker, FaGithub, FaReact, FaJava } from "react-icons/fa";
 import { SiSpringboot } from "react-icons/si";
 import { DiNginx } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 const breakpoints = {
   mobile: "768px",
@@ -86,6 +87,13 @@ const HeroBanner = () => {
               className="text-red-500 hover:scale-110 transition-transform "
             />
             <p className="mt-2 text-sm">Java</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <BiLogoPostgresql
+              size={48}
+              className="text-green-500 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">Postgresql</p>
           </div>
           <div className="flex flex-col items-center skills-icon">
             <DiNginx
