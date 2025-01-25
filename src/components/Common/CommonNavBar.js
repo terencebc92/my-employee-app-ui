@@ -65,9 +65,16 @@ const StyledLink = styled(Nav.Link).attrs({ className: "nav-link" })`
   }
 `;
 
+const StyledNavBar = styled(Navbar)`
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  background-color: white;
+`;
+
 function CommonNavBar() {
   return (
-    <Navbar expand="lg">
+    <StyledNavBar expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <Logo className="navbar-logo" />
@@ -76,7 +83,14 @@ function CommonNavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <StyledLink as={Link} to="/" aria-label="Link to employees table">
+            <StyledLink as={Link} to="/" aria-label="Link to profile">
+              Profile
+            </StyledLink>
+            <StyledLink
+              as={Link}
+              to="/employees"
+              aria-label="Link to employees table"
+            >
               Employees
             </StyledLink>
             <StyledLink
@@ -102,7 +116,7 @@ function CommonNavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </StyledNavBar>
   );
 }
 

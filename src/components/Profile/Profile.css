@@ -1,0 +1,149 @@
+.hero {
+  height: calc(100vh - 66px);
+  width: 100%;
+  /* remove border once done */
+  border: 1px solid hsla(36, 76%, 34%, 0.082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  background-color: #996515;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #7f4a0e; /* Slightly darker shade for hover */
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+.about {
+  height: calc(100vh - 66px);
+  width: 100%;
+  /* remove border once done */
+  /* border: 1px solid red; */
+  display: flex;
+  padding: 16%;
+}
+
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePicture {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 2em;
+}
+
+.profilePicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 0%;
+}
+
+.contact {
+  /* max-width: 600px; */
+  /* max-width: 50%; */
+  margin: 0 auto;
+  padding: 5% 25%;
+  border-radius: 8px;
+
+  /* height: calc(100vh - 66px);
+  width: 100%;
+  border: 1px solid #99641515;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16%; */
+}
+
+.form-parent {
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #996515;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #84703def;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  /* border-color: #4caf50; */
+  border-color: #996515;
+
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
