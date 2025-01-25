@@ -170,6 +170,7 @@ function Contact() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Your Message"
+            rows={8}
           />
           {errors.message && <span className="error">{errors.message}</span>}
         </div>

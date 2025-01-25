@@ -42,7 +42,7 @@
 }
 
 .about {
-  height: calc(100vh - 66px);
+  min-height: calc(100vh - 66px);
   width: 100%;
   /* remove border once done */
   /* border: 1px solid red; */
@@ -54,6 +54,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .profileText {
+    margin-top: 2em;
+  }
 }
 
 .profilePicture {
@@ -78,20 +88,22 @@
 .contact {
   /* max-width: 600px; */
   /* max-width: 50%; */
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 5% 25%;
-  border-radius: 8px;
+  border-radius: 8px; */
 
-  /* height: calc(100vh - 66px);
+  height: calc(100vh - 66px);
   width: 100%;
-  border: 1px solid #99641515;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16%; */
+  justify-content: center;
+  padding: 0 20%;
+  margin-top: 64px;
 }
 
 .form-parent {
+  width: 100%;
 }
 
 .form-group {
@@ -104,18 +116,31 @@
 }
 
 .submit-button {
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 10px 20px;
+  font-size: 1.25rem;
   background-color: #996515;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #84703def;
+  /* background-color: #84703def; */
+  background-color: #7f4a0e; /* Slightly darker shade for hover */
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 2em;
+    margin-bottom: 5em;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
 }
 
 label {

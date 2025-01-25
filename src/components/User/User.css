@@ -15,10 +15,12 @@
 .form-control {
   border-radius: 0px !important;
 }
+
 .form-label {
   font-weight: 600;
   font-size: 18px;
 }
+
 .submit-btn {
   border-radius: 0px;
   width: 100%;
@@ -26,11 +28,13 @@
   background-color: #000;
   border: 0px !important;
 }
+
 .heading {
   padding: 0px 0px 15px 0px;
   text-align: center;
   text-transform: uppercase;
 }
+
 .heading p {
   font-size: 25px !important;
   font-weight: 700;
