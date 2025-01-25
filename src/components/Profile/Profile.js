@@ -5,6 +5,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Toast, ToastContainer } from "react-bootstrap";
 import { emailUrl } from "../../config/config";
+import { FaDocker, FaGithub, FaReact, FaJava } from "react-icons/fa";
+import { SiSpringboot } from "react-icons/si";
+import { DiNginx } from "react-icons/di";
 
 const breakpoints = {
   mobile: "768px",
@@ -41,6 +44,62 @@ const HeroContainer = styled.div`
   }
 `;
 
+const HeroBanner = () => {
+  return (
+    <>
+      <div className="powered-by">
+        <p>Site powered by: </p>
+      </div>
+      <div className="bg-gray-900 text-white text-center py-16">
+        <div className="flex flex-wrap justify-center gap-8 skills">
+          <div className="flex flex-col items-center skills-icon">
+            <FaDocker
+              size={48}
+              className="text-blue-500 hover:scale-110 transition-transform"
+            />
+            <p className="mt-2 text-sm">Docker</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <FaGithub
+              size={48}
+              className="text-gray-400 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">GitHub Actions</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <FaReact
+              size={48}
+              className="text-blue-300 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">React</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <SiSpringboot
+              size={48}
+              className="text-green-400 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">Spring Boot</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <FaJava
+              size={48}
+              className="text-red-500 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">Java</p>
+          </div>
+          <div className="flex flex-col items-center skills-icon">
+            <DiNginx
+              size={48}
+              className="text-green-500 hover:scale-110 transition-transform "
+            />
+            <p className="mt-2 text-sm">Nginx</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 function Hero() {
   return (
     <>
@@ -49,6 +108,7 @@ function Hero() {
       <a href="#contact" class="cta-button">
         Contact Me
       </a>
+      <HeroBanner></HeroBanner>
     </>
   );
 }
@@ -61,7 +121,7 @@ function About() {
           <img src={ProfilePicture}></img>
         </div>
         <div className="profileText">
-          <h1>About me </h1>
+          <h1 className="profile-title">About me </h1>
           <p>
             I'm a software developer in Singapore, working in an international
             bank. I have experience building and maintaining brownfield and
@@ -148,7 +208,7 @@ function Contact() {
 
   return (
     <>
-      <h2>Contact</h2>
+      <h1>Contact</h1>
       <p>
         Have a question or want to work together? Leave your details and I'll
         get back to you as soon as possible.

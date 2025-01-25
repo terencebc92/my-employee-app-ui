@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../employee-card-svgrepo-com.svg";
 import styled from "styled-components";
@@ -65,6 +66,28 @@ const StyledLink = styled(Nav.Link).attrs({ className: "nav-link" })`
   }
 `;
 
+const StyledNavDropdown = styled(NavDropdown)`
+  @media (min-width: 991px) {
+    &:hover {
+      margin-bottom: -3px;
+      border-bottom: 3px solid #996515;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+`;
+
+const StyledNavDropdownItem = styled(NavDropdown.Item).attrs({
+  className: "dropdown-item",
+})`
+  @media (min-width: 991px) {
+    &:hover {
+      margin-bottom: -3px;
+      border-bottom: 3px solid #996515;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+`;
+
 const StyledNavBar = styled(Navbar)`
   position: sticky;
   top: 0;
@@ -78,7 +101,7 @@ function CommonNavBar() {
       <Container>
         <Navbar.Brand as={Link} to="/">
           <Logo className="navbar-logo" />
-          Employee Management (beta)
+          Employee Portal (beta)
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -86,21 +109,22 @@ function CommonNavBar() {
             <StyledLink as={Link} to="/" aria-label="Link to profile">
               Profile
             </StyledLink>
+
             <StyledLink
               as={Link}
               to="/employees"
               aria-label="Link to employees table"
             >
-              Employees
+              Employees (demo)
             </StyledLink>
             <StyledLink
               as={Link}
               to="/create-user"
               aria-label="Link to create user"
             >
-              Create
+              Create (demo)
             </StyledLink>
-            <StyledLink as={Link} to="/game" aria-label="Link to tic tac toe">
+            {/* <StyledLink as={Link} to="/game" aria-label="Link to tic tac toe">
               Game
             </StyledLink>
             <StyledLink as={Link} to="/product" aria-label="Link to product">
@@ -112,7 +136,48 @@ function CommonNavBar() {
               aria-label="Link to caravaggio"
             >
               Caravaggio
-            </StyledLink>
+            </StyledLink> */}
+
+            {/* <StyledNavDropdown title="Projects" id="projects-dropdown">
+              <StyledNavDropdown
+                title="Employee App"
+                id="employee-app-dropdown"
+                drop="end"
+              >
+                <StyledNavDropdownItem
+                  as={Link}
+                  to="/employees"
+                  aria-label="View employees"
+                >
+                  View
+                </StyledNavDropdownItem>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/create-user"
+                  aria-label="Create new user"
+                >
+                  Create New
+                </NavDropdown.Item>
+              </StyledNavDropdown>
+
+              <NavDropdown.Item as={Link} to="/game" aria-label="Link to game">
+                Game
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/product"
+                aria-label="Link to product"
+              >
+                Product
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/caravaggio"
+                aria-label="Link to caravaggio"
+              >
+                Caravaggio
+              </NavDropdown.Item>
+            </StyledNavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
