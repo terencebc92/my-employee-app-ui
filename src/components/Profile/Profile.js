@@ -4,6 +4,7 @@ import ProfilePicture from "../../assets/images/Terence resume photo.jpg";
 import React, { useState } from "react";
 import axios from "axios";
 import { Toast, ToastContainer } from "react-bootstrap";
+import { emailUrl } from "../../config/config";
 
 const breakpoints = {
   mobile: "768px",
@@ -133,15 +134,10 @@ function Contact() {
       console.log("Form data submitted:", formData);
       // You can perform further actions like sending the data to an API here
 
-      let emailUrl = "http://localhost:8083/api/v1/contact";
-
       axios
         .post(`${emailUrl}`, formData)
         .then((response) => {
           setShowToast(true);
-
-          alert("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); // Reset form
         })
         .catch((error) => {
           console.error(error);
@@ -204,13 +200,29 @@ function Contact() {
           bg="danger"
           show={error}
           onClose={() => setError(null)}
-          delay={3000}
+          delay={5000}
           autohide
         >
           <Toast.Header>
-            <strong className="me-auto">Error on submission!</strong>
+            <strong className="me-auto">Failed to send email!</strong>
           </Toast.Header>
           <Toast.Body className={"text-white"}>{error}</Toast.Body>
+        </Toast>
+      </ToastContainer>
+      <ToastContainer>
+        <Toast
+          bg="primary"
+          show={showToast}
+          onClose={() => setShowToast(false)}
+          delay={5000}
+          autohide
+        >
+          <Toast.Header>
+            <strong className="me-auto">Email sent successfully!</strong>
+          </Toast.Header>
+          <Toast.Body className={"text-white"}>
+            Thank you for your email. I'll get back to you as soon as possible.
+          </Toast.Body>
         </Toast>
       </ToastContainer>
     </>
