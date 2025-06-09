@@ -13,7 +13,7 @@ export default function Chatbot() {
     setInput("");
     setLoading(true);
 
-    const response = await fetch("http://pythonbe:5000/ask-stream", {
+    const response = await fetch("https://terence-app.duckdns.org/ask-stream", {
       method: "POST",
       body: JSON.stringify({ question: question }),
       headers: {
