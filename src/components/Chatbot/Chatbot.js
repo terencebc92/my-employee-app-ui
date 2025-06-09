@@ -87,8 +87,10 @@ export default function Chatbot() {
 
   return (
     <div style={{ width: "100%" }}>
-      <h2>Chat with qwen3:0.6b (Experimental)</h2>
-      <p>Find out more about Terence's career and skills</p>
+      <h2>Chat with my AI assistant! </h2>
+      <p>
+        Find out more about Terence's career and skills - powered by qwen3:0.6b
+      </p>
       <div style={{ marginBottom: "10px" }}>
         <strong>Suggested Questions:</strong>
         <div

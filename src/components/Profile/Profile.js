@@ -125,8 +125,7 @@ function Hero() {
       <HeroBanner></HeroBanner>
       <p>
         {" "}
-        This site is built using my homelab. Here are the links to the source
-        code:{" "}
+        This page is built and hosted on my homelab. Check out the source code:{" "}
         <a href="https://github.com/terencebc92/my-employee-app-ui">
           {" "}
           Frontend
@@ -148,18 +147,20 @@ function About() {
         <div className="profileText">
           <h1 className="profile-title">About me </h1>
           <p>
-            I'm a software developer in Singapore, working in an international
-            bank. I have experience building and maintaining brownfield and
-            greenfield enterprise systems and have deep expertise in Java and
-            Spring Boot.
+            Howdy! I'm a software developer in Singapore, working in Standard
+            Chartered Bank. My experience is in building and maintaining
+            brownfield and greenfield enterprise systems and I have deep
+            expertise in Java and Spring Boot. For personal projects, I also
+            enjoy using Python!
           </p>
           <p>
-            Fully committed to life-long learning and expanding my skillsets, I
-            have a deep passion all things web development. The unique
-            combination of creativity, logic, technology and never running out
-            of new things to discover, drives my excitement and passion for web
-            development. When I'm not at my computer I like to spend my time
-            reading, keeping fit with Jiu Jitsu!
+            I love learning about new technlology and expanding my skillset,
+            whether with new programming languages or frameworks. Being an
+            engineer allows me to develop my creativity, logic, problem-solving
+            skills and communication skills. There are always new things to
+            discover and this drives my excitement for web development. When I'm
+            not at my computer I like to spend my time reading and keeping fit
+            with Jiu Jitsu!
           </p>
         </div>
       </div>
