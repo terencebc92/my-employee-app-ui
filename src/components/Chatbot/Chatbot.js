@@ -1,11 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Chatbot.css";
 import { chatUrl } from "../../config/config";
+import ReactMarkdown from "react-markdown";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [thinkingText, setThinkingText] = useState("Thinking.");
+
+  useEffect(() => {
+    if (loading) {
+      let dotCount = 1;
+      const interval = setInterval(() => {
+        dotCount = (dotCount % 3) + 1; // 1, 2, 3
+        setThinkingText("Thinking" + ".".repeat(dotCount));
+      }, 500);
+      return () => clearInterval(interval); // cleanup when loading stops
+    } else {
+      setThinkingText("Thinking.");
+    }
+  }, [loading]);
+
+  useEffect(() => {
+    const chatBox = document.querySelector(".chat-box");
+    if (chatBox) {
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }, [messages]);
 
   const sendMessage = async (question = input) => {
     const newMessages = [...messages, { role: "user", text: question }];
@@ -110,15 +132,36 @@ export default function Chatbot() {
         className="chat-box"
       >
         {messages.map((msg, index) => (
-          <p
-            key={index}
-            style={{
-              textAlign: msg.role === "user" ? "right" : "left",
-            }}
-          >
-            <strong>{msg.role === "user" ? "You: " : "Bot: "}</strong>
-            {msg.text}
-          </p>
+          // <p
+          //   key={index}
+          //   style={{
+          //     textAlign: msg.role === "user" ? "right" : "left",
+          //   }}
+          // >
+          //   <strong>{msg.role === "user" ? "You: " : "Bot: "}</strong>
+          //   {msg.text}
+          // </p>
+          <div className="">
+            <div
+              className={msg.role === "user" ? "user-message" : "bot-message"}
+            >
+              <ReactMarkdown
+                key={index}
+                children={`${msg.role === "user" ? "**You:**" : "**Bot:**"} ${String(msg.text).trimStart()}`}
+                components={{
+                  p: ({ node, ...props }) => (
+                    <p
+                      style={{
+                        textAlign: msg.role === "user" ? "right" : "left",
+                        marginBottom: "10px",
+                      }}
+                      {...props}
+                    />
+                  ),
+                }}
+              />
+            </div>
+          </div>
         ))}
       </div>
       <div style={{ display: "flex" }}>
@@ -131,12 +174,12 @@ export default function Chatbot() {
           disabled={loading}
         />
         <button
-          onClick={sendMessage}
+          onClick={() => sendMessage()}
           // style={{ padding: "10px", marginTop: "10px" }}
-          disabled={loading}
+          disabled={loading || input.trim() === ""}
           className="chat-button"
         >
-          {loading ? "Thinking..." : "Send"}
+          {loading ? thinkingText : "Send"}
         </button>
       </div>
     </div>
