@@ -1,0 +1,23 @@
+.chat-box:focus {
+  border: 1px solid #7f4a0e; /* Slightly darker shade for hover */
+}
+.chat-box:hover {
+  border: 1px solid #7f4a0e; /* Slightly darker shade for hover */
+}
+
+.chat-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  background-color: #996515;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-button:hover {
+  /* background-color: #84703def; */
+  background-color: #7f4a0e; /* Slightly darker shade for hover */
+}

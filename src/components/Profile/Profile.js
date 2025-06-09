@@ -9,6 +9,7 @@ import { FaDocker, FaGithub, FaReact, FaJava } from "react-icons/fa";
 import { SiSpringboot } from "react-icons/si";
 import { DiNginx } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
+import Chatbot from "../Chatbot/Chatbot";
 
 const breakpoints = {
   mobile: "768px",
@@ -27,6 +28,9 @@ export default function Profile() {
       </div>
       <div className="contact" id="contact">
         <Contact />
+      </div>
+      <div className="contact" id="chatbot">
+        <Chatbot />
       </div>
     </>
   );
@@ -113,10 +117,23 @@ function Hero() {
     <>
       <h1>Hello, I'm Terence</h1>
       <p>I'm a full-stack web developer.</p>
+
       <a href="#contact" class="cta-button">
         Contact Me
       </a>
+
       <HeroBanner></HeroBanner>
+      <p>
+        {" "}
+        This site is built using my homelab. Here are the links to the source
+        code:{" "}
+        <a href="https://github.com/terencebc92/my-employee-app-ui">
+          {" "}
+          Frontend
+        </a>
+        ,{" "}
+        <a href="https://github.com/terencebc92/my-employee-app-be"> Backend</a>
+      </p>
     </>
   );
 }
