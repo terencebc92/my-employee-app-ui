@@ -55,4 +55,4 @@ jobs:
             docker image prune -f
             docker container prune -f
             docker network prune -f
-            docker run -d --name my-employee-app-ui -p 3000:80 ${{ secrets.DOCKER_USERNAME }}/my-employee-app-ui:latest --network ollama-net
+            docker run -d --name my-employee-app-ui -p 3000:80 ${{ secrets.DOCKER_USERNAME }}/my-employee-app-ui:latest
